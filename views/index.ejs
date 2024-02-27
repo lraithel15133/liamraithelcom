@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>   
+      <%- include('partials/navbar.ejs') %>
+    </head>
+<body>
+    <% if (page === 'home'){ %>
+        <%- include('blog.ejs') %>
+        <title>Liam Raithel</title>
+    <% } else if (page === 'projects'){ %>
+        <%- include('projects.ejs') %>
+        <title>Liam Raithel - Projects</title>
+    <% } else if (page === 'aboutme'){ %>
+        <%- include('aboutme.ejs') %>
+        <title>Liam Raithel - About Me</title>
+    <% } else{ %> 
+        <h1>404 Not Found</h1>
+    <% } %>
+</body>
+</html>

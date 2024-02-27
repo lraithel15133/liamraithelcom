@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <title>Local Pastebin</title>
+    <style>
+
+        textarea {
+            width: 40%;
+            height: 500px;
+            justify-content: center
+        }
+
+        #buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 20px 20px;
+            cursor: pointer;
+
+        }
+
+        #result {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+		#bottom {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #text-input {
+            text-align: center;
+            margin-top: 20px
+        }
+
+		.paste-link {
+            cursor: pointer;
+            color: blue;
+            font-size: 18px;
+            text-decoration: underline;
+            text-align: center;
+        }
+
+        h1 {text-align: center;}
+    </style>
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+    <script>
+        $.get("navbar.html", function(data){
+            $("#nav-placeholder").replaceWith(data);
+        });
+    </script>
+
+    <h1>Local Pastebin</h1>
+    <div id= "text-input"><textarea id="text" placeholder="Paste your... paste here."></textarea></div>
+    <br>
+    <div id="buttons">
+        <button onclick="createPaste()"><i class="fa-regular fa-floppy-disk"></i></button>
+	    <button onclick="clearPastes()"><i class="fa-solid fa-trash"></i></button>
+    </div>
+    <div id="result"></div>
+    <script>
+		function sleep(ms) {
+			return new Promise(resolve => setTimeout(resolve, ms));
+		}
+	
+        function createPaste() {
+            const text = document.getElementById('text').value;
+            const id = Date.now();
+			localStorage.setItem(id, text);
+            document.getElementById('result').innerHTML = `
+                <p>Your paste has been created. ID = ${id}</p>
+            `;
+			sleep(3500).then(() => { location.reload(); });
+        }
+		
+		function clearPastes() {
+			localStorage.clear();
+			location.reload();
+		}
+		
+		function loadPaste(id) {
+            const text = localStorage.getItem(id);
+            document.getElementById('text').value = text;
+        }
+    </script>
+
+    <div id="bottom">
+        <h1>Saved Pastes</h1>
+        <div id="saved-pastes"></div>
+        <script>
+            const savedPastesContainer = document.getElementById('saved-pastes');
+            const sortedKeys = Object.keys(localStorage).sort().reverse();
+            sortedKeys.forEach(id => {
+                if (id === 'debug') return;
+                savedPastesContainer.innerHTML += `<span class="paste-link" onclick="loadPaste(${id})">${id} <br></span>`;
+            });
+        </script>
+	</div>
+</body>
+</html>
