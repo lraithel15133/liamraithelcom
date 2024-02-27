@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 app.set('view engine', 'ejs');
-var port = process.env.PORT || 3008;
+var port = process.env.PORT || 3000;
 var path = require('path');
 
 app.use(express.static(path.join(__dirname, 'public')));
