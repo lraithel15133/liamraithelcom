@@ -24,6 +24,6 @@
 	   "title": "Belt Tension Calculator",
 	   "date": "07.30.2024",
 	   "content": "I made a little belt tension calculator and put it up on Github pages. The reason its on github pages is I have made it for a friends business, and the page its hosted on is static elements. I ended up putting it in an iframe and loading it on the page. Heres the link, I am quite proud of it! https://lraithel15133.github.io/beltcalculator/ and http://lukeslab.info/en/belt-tension-guide"
-	},	
+	}	
     ]
 }
