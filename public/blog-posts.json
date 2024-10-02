@@ -5,11 +5,6 @@
             "date": "01.19.2024",
             "content": "I made this website to chronicle what I am learning about full stack web development. To make any of this happen, I first had to learn the basics of HTML and CSS. Then, I spent some time working on the simple javascript code for my Local Pastebin project. I made myself a little logo, and now I am brainstorming ideas for my next projects."
         },
-        {
-            "title": "Day of AWS Agony",
-            "date": "01.21.2024",
-            "content": "I spent longer than I'd like to admit learning how Node.js and Express work (very basics) so I can move this website over to AWS to prep for this blog to be turned into a MongoDB based blog. Currently it is all held in a JSON file. My next project is learning MongoDB usage and maybe even making a backend portal for me to make blog posts on."
-        },
 	{
 	    "title": "A Month?",
             "date": "02.27.2024",
