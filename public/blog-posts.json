@@ -2,7 +2,7 @@
     "posts": [
         {
             "title": "Website Created",
-            "date": "1.19.2024",
+            "date": "01.19.2024",
             "content": "I made this website to chronicle what I am learning about full stack web development. To make any of this happen, I first had to learn the basics of HTML and CSS. Then, I spent some time working on the simple javascript code for my Local Pastebin project. I made myself a little logo, and now I am brainstorming ideas for my next projects."
         },
         {
@@ -24,6 +24,11 @@
 	   "title": "Belt Tension Calculator",
 	   "date": "07.30.2024",
 	   "content": "I made a little belt tension calculator and put it up on Github pages. The reason its on github pages is I have made it for a friends business, and the page its hosted on is static elements. I ended up putting it in an iframe and loading it on the page. Heres the link, I am quite proud of it! <a href=\"https://lraithel15133.github.io/beltcalculator/\">https://lraithel15133.github.io/beltcalculator/</a> and <a href=\"http://lukeslab.info/en/belt-tension-guide\">http://lukeslab.info/en/belt-tension-guide</a>"
-	}	
+	},
+	{
+	   "title": "College Graduate",
+	   "date": "10.02.2024",
+	   "content": "I will refrain from being sappy here, but I finished college today and I am pending graduation! This is a massive achievement for me. I have been buried in a computer screen for over 3 months; essentially working two full time jobs all on school. I have never been so proud of myself. Thank you to my lovign wife and to those who have supported me along the way."
+	}
     ]
 }
